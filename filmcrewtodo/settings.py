@@ -1,20 +1,22 @@
 from pathlib import Path
 import os
 import dj_database_url
-import env
+
+if os.path.isfile('env.py'):
+    import env
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'django-insecure--gg+d)g$50bvj$8q751ndoq*p)9t8m3f)#@@0l4vb!rk-!g^5e'
 
-CSRF_TRUSTED_ORIGINS = ['https://filmcrewtodo.herokuapp.com/']
-
-
-DEBUG = os.environ.get('DEBUG')
+CSRF_TRUSTED_ORIGINS = ['https://8000-tylerdevrie-filmcrewtod-sj7tkf9ee6c.ws-eu85.gitpod.io']
 
 
-ALLOWED_HOSTS = ['https://filmcrewtodo.herokuapp.com/']
+DEBUG = True
+
+
+ALLOWED_HOSTS = []
 
 
 
