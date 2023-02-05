@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure--gg+d)g$50bvj$8q751ndoq*p)9t8m3f)#@@0l4vb!rk-!g^5e'
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-tylerdevrie-todolistprj-hqdrmugz94p.ws-eu85.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-tylerdevrie-filmcrewtod-g0ujwoohrmi.ws-eu85.gitpod.io']
 
 
 DEBUG = True
@@ -36,7 +36,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'filmcrewtodo.urls'
+ROOT_URLCONF = 'todolistprj.urls'
 
 TEMPLATES = [
     {
@@ -54,7 +54,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'filmcrewtodo.wsgi.application'
+WSGI_APPLICATION = 'todolistprj.wsgi.application'
 
 
 DATABASES = {
