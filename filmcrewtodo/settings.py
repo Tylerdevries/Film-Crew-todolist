@@ -10,12 +10,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-tylerdevrie-filmcrewtod-2y3u11qdg9p.ws-eu85.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://filmcrewtodo.herokuapp.com/']
 
 
 DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://filmcrewtodo.herokuapp.com/']
 
 
 
