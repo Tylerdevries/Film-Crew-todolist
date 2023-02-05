@@ -1,1 +1,1 @@
-web: gunicorn filmcrewtodo.wsgi:application
+web: gunicorn filmcrewtodo.wsgi
