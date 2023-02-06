@@ -145,7 +145,7 @@ I also ran into an issue when deploying my app to heroku. The issue was that the
 
 I solved this by moving all files and folders to the root directory of the main repo and adding a Procfile prior to pushing.
 
-I also reverted to heroku stack 20 and python-3.9.14 to solve this issue. 
+I also reverted to python-3.9.14 to solve this issue. 
 
 ### Unfixed Bugs
 
@@ -160,7 +160,7 @@ I used the following steps to deploy my page:
 2. I installed gunicorn and dj-database-url.
 3. I logged into my installed heroku within the repo terminal.
 4. I created a new heroku app linking the repo to my heroku account.
-5. I created a new ElephantSQL Database and linked it to my repo for use instead of sqlite.
+5. I created a new ElephantSQL Database and linked it and cloudinary to my repo for use.
 6. I pushed all these changes to github and made my first deployment to heroku
 7. Created the Environment Variables within setting.py and env.py, gitpod workspaces and heroku.
 8. Hid the SECRET_KEY
