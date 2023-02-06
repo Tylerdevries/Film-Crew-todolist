@@ -11,7 +11,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-CSRF_TRUSTED_ORIGINS = ['localhost', 'https://filmcrewtodo.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://8000-tylerdevrie-filmcrewtod-qrzs3vmilc7.ws-eu85.gitpod.io', 'https://filmcrewtodo.herokuapp.com']
 
 
 DEBUG = False
@@ -104,7 +104,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCLoudinaryStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
