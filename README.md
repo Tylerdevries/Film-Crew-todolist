@@ -1,108 +1,186 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# To Do App
 
-Welcome Tylerdevries,
+This is the final resubmission of the project found here https://github.com/Tylerdevries/ToDoApp, please refer to this repository for user stories and commits outlining the progression of the main project. 
+This repository houses an augmented version with changes made to failed criteria. 
+Changes made include crediting the walkthrough used for the basis of the project, having a fixed focus for the use of the project and an updated readme to match new version of project. No changes were made to passing criteria.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The goal of this site is to allow individual users working on a film crew to sign in as their role to create a fully amendable todolist where they can track tasks working on a given film project. 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Users of this site will be able to register their role from the login page. Once registered they can sign in and view their own data which will be saved via a postgresql database.
 
-## Gitpod Reminders
+The site is targeting towards use for individuals working on a film project in college or for broader production.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+![film home](https://user-images.githubusercontent.com/93283135/216871039-d850d8f5-6ce7-49ac-a7aa-0927a4a901c0.PNG)
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+## Features:
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### General Navigation:
 
-A blue button should appear to click: _Make Public_,
+I Designed the site with UX in mind.
 
-Another blue button should appear to click: _Open Browser_.
+Users are initially directed to a login page where they can sign in using a username(which would be a role in the production of the film) and password or use a register redirect to sign up for the app.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+New users will be directed to a register page where there will be three fields for them to fill out, Username, password and password confirmation. 
 
-To log into the Heroku toolbelt CLI:
+Users that have either logged in or registered will be directed to the home page. Here they will have a multitude of options including logout, create task and search.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+Returning users can delete or update alreaady created tasks.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+The site has been styled using CSS in a main.html file which in pulled from in all other template files. 
 
-------
+![login screen](https://user-images.githubusercontent.com/93283135/192444712-e37a3582-106e-45c1-8c30-dc1ccbf2cf81.PNG)
+![login view](https://user-images.githubusercontent.com/93283135/192444694-a841206d-cc1b-4fa8-9dad-c5098230c10c.PNG)
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### The Login Page:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+The login page is the first page shown to a user that isn't logged in.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+It asks the user for a username and password. Djangos built in class for login authorization will validate the information given through the database.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+Below the login button, users can register for the app by follow the link titled register. 
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+A screenshot of the view for this page is shown above. This view is called on within the urls.py file and is tested on in the test.py file. 
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+![image](https://user-images.githubusercontent.com/93283135/192445925-ff257c1b-cc91-4ac5-b761-237a9ca46e64.png)
+![register code](https://user-images.githubusercontent.com/93283135/192446140-d917bbd2-f44a-48ce-b3bd-8433d7693f74.PNG)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Register Page:
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+Here the user can sign up for the app.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+Upon sign up completion the user is redirect to the home page.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+The view used here is displayed above. This confirms authorisation and adds the user to the database. 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+This view is called on within the urls.py file and is tested on in the test.py file. 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![home page](https://user-images.githubusercontent.com/93283135/192447633-f21076f7-2951-464b-96e4-5c333a9efd7b.PNG)
+![task list](https://user-images.githubusercontent.com/93283135/192447656-8253d6d1-f0a1-434c-943f-5071d2153a83.PNG)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### The Home Page:
 
-------
+The home page shows all available features to the user in a comprehensive list.
 
-## FAQ about the uptime script
+Here the user can logout using the link in the top right corner of the app. This link will redirect the user back to the login page. 
 
-**Why have you added this script?**
+The header at the top of the page is styled to welcome the user by their username and tell them how many incomplete tasks they remaining in their todo list.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+The search bar is below this and uses the django search feature to search the users the todo list. The view interprets strings typing into the search and searches for tasks contains these strings within their name.
 
-**How will this affect me?**
+To the right of the search bar is a plus button which when pressed will redirect the user to an empty form where the user can create a new task.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+Below these two features is the list of todos. Here the user can see what todos are completed and what are pending via the styling. 
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+If the user clicks on the task from the shown list it will redirect them to the form with the task information. 
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+The X button features on the task will redirect the user to a delete confirmation page. 
 
-**So….?**
+The three dots on the far right can be held and dragged to drag the tasks to rearrange the order of the list. 
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+Above is the view for the functioning of this page.
 
-**Can I opt out?**
+This view is called on within the urls.py file and is tested on in the test.py file. 
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+![create task](https://user-images.githubusercontent.com/93283135/192454054-921d4d9a-10ee-4966-ac9a-4ee524968424.PNG)
+![create tasks](https://user-images.githubusercontent.com/93283135/192454110-8c193a54-4e95-48bb-a111-d86142cab263.PNG)
 
-**Anything more?**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### The Task Creation Form:
 
----
+This is the page the user is directed to when clicking on the plus symbol on the home page.
 
-Happy coding!
+Here the user can title their task and leave a description that can be seen when the task is opened. 
+
+Upon submitting the information the task is added to the home page and the user is returned to it.
+
+The user can return to the home page by clicking the back link at the top left of the page. 
+
+Above is the view for the functioning of this page.
+
+This view is called on within the urls.py file and is tested on in the test.py file. 
+
+![update](https://user-images.githubusercontent.com/93283135/192455937-e84c61f4-666a-4a06-ae0a-823c990505b7.PNG)
+![update and delete](https://user-images.githubusercontent.com/93283135/192455887-9599e91d-e743-4622-a20c-162bac7c7ccc.PNG)
+![delete](https://user-images.githubusercontent.com/93283135/192455952-1df19229-44a7-4a14-b6d9-ffc87c65f0da.PNG)
+
+
+### Delete and Update Task: 
+
+The delete page shown above appears when the user clicks on the X icon alongside a task.
+
+Here the user is prompted to confirm that they wish to delete the task. 
+
+I added a confirmation page as a new user could accidentally press this button and this could lead to poor user experience.
+
+The edit page shown above is shown when the user clicks on the name portion of a task.
+
+Here the user is shown what was previously filled out in these fields including and can make changes which will reflect on the home page. 
+
+Above is the views for the functioning of these pages.
+
+## Testing
+
+
+![testing](https://user-images.githubusercontent.com/93283135/192486724-42b0fb0b-b4de-4b20-84bc-96279331ddf6.PNG)
+
+
+I used the included django testing functions to test my views.
+
+I tested the responses of each of the major views as seen above. 
+
+## Major Errors in Development
+
+### Solved Bugs
+
+An initial issue I ran into with working with the most recent build of django was a crsf token issue when loading the homepage.
+
+I fixed this by amending the setting.py file and adding CSRF_TRUSTED_ORIGINS = [
+    (https://tylertodo.herokuapp.com)
+]
+
+I also ran into an issue when deploying my app to heroku. The issue was that the push to heroku main would failed due to the organising of my files and folders.
+
+I solved this by moving all files and folders to the root directory of the main repo and adding a Procfile prior to pushing.
+
+I also reverted to heroku stack 20 and python-3.9.14 to solve this issue. 
+
+### Unfixed Bugs
+
+No unfixed bugs
+
+## Deployment
+
+The site was deployed through Heroku. 
+
+I used the following steps to deploy my page:
+1. I moved all files and folders to the main root.
+2. I installed gunicorn and dj-database-url.
+3. I logged into my installed heroku within the repo terminal.
+4. I created a new heroku app linking the repo to my heroku account.
+5. I created a new postgresql database on heroku and linked it to my repo for use instead of sqlite.
+6. I pushed all these changes to github and made my first deployment to heroku
+7. Created the Environment Variables within setting.py, gitpod workspaces and heroku.
+8. Hid the SECRET_KEY
+
+The livelink can be found here https://tylertodo.herokuapp.com/
+
+## Credits
+
+The prior two walkthroughs in this module of the course. 
+
+I used the following sites as sources and tutorials for django components.
+
+https://stackoverflow.com/
+
+https://getbootstrap.com/
+
+https://ccbv.co.uk/projects/Django/4.0/
+
+https://www.youtube.com/watch?v=llbtoQTt4qw&t=3511s
+
