@@ -6,17 +6,18 @@ if os.path.isfile('env.py'):
     import env
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 
-SECRET_KEY = 'django-insecure--gg+d)g$50bvj$8q751ndoq*p)9t8m3f)#@@0l4vb!rk-!g^5e'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-tylerdevrie-filmcrewtod-hd14kojk8kf.ws-eu85.gitpod.io']
-
-
-DEBUG = True
+CSRF_TRUSTED_ORIGINS = ['localhost', 'https://filmcrewtodo.herokuapp.com']
 
 
-ALLOWED_HOSTS = []
+DEBUG = False
+
+
+ALLOWED_HOSTS = ['localhost', 'filmcrewtodo.herokuapp.com']
 
 
 
@@ -26,7 +27,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
     'todo.apps.TodoConfig',
 ]
 
@@ -45,7 +48,7 @@ ROOT_URLCONF = 'filmcrewtodo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,6 +104,12 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCLoudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
