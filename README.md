@@ -87,10 +87,7 @@ Above is the view for the functioning of this page.
 
 This view is called on within the urls.py file and is tested on in the test.py file. 
 
-
-
-
-
+![task descriptioin](https://user-images.githubusercontent.com/93283135/216875971-aae5ebcc-423e-4e36-a16a-9c48ce2813a5.PNG)
 
 ### The Task Creation Form:
 
@@ -104,7 +101,8 @@ The user can return to the home page by clicking the back link at the top left o
 
 Above is the view for the functioning of this page.
 
-![task descriptioin](https://user-images.githubusercontent.com/93283135/216875971-aae5ebcc-423e-4e36-a16a-9c48ce2813a5.PNG)
+![dop screen](https://user-images.githubusercontent.com/93283135/216877117-fb70324e-fc53-40b7-815b-f2dd0e307c02.PNG)
+
 ![delete screen](https://user-images.githubusercontent.com/93283135/216875979-a05bd43a-bb4b-4708-b090-392b03fd555d.PNG)
 ![task updates and delete](https://user-images.githubusercontent.com/93283135/216875990-9fbc3c0b-8830-4f2d-a738-a595267cd6e6.PNG)
 
