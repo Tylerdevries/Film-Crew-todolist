@@ -1,4 +1,4 @@
-# To Do App
+# Film Crew todolist
 
 This is the final resubmission of the project found here https://github.com/Tylerdevries/ToDoApp, please refer to this repository for user stories and commits outlining the progression of the main project. 
 This repository houses an augmented version with changes made to failed criteria. 
@@ -10,7 +10,8 @@ Users of this site will be able to register their role from the login page. Once
 
 The site is targeting towards use for individuals working on a film project in college or for broader production.
 
-![film home](https://user-images.githubusercontent.com/93283135/216871039-d850d8f5-6ce7-49ac-a7aa-0927a4a901c0.PNG)
+![director tasks](https://user-images.githubusercontent.com/93283135/216874880-b783a051-6cb3-40f5-92c0-d04a6f4d6d80.PNG)
+
 
 
 ## Features:
@@ -30,7 +31,8 @@ Returning users can delete or update alreaady created tasks.
 
 The site has been styled using CSS in a main.html file which in pulled from in all other template files. 
 
-![login screen](https://user-images.githubusercontent.com/93283135/192444712-e37a3582-106e-45c1-8c30-dc1ccbf2cf81.PNG)
+![film login](https://user-images.githubusercontent.com/93283135/216874903-120f81c3-e96c-408d-80e7-b5bded8cfe9d.PNG)
+
 ![login view](https://user-images.githubusercontent.com/93283135/192444694-a841206d-cc1b-4fa8-9dad-c5098230c10c.PNG)
 
 
@@ -44,8 +46,10 @@ Below the login button, users can register for the app by follow the link titled
 
 A screenshot of the view for this page is shown above. This view is called on within the urls.py file and is tested on in the test.py file. 
 
-![image](https://user-images.githubusercontent.com/93283135/192445925-ff257c1b-cc91-4ac5-b761-237a9ca46e64.png)
-![register code](https://user-images.githubusercontent.com/93283135/192446140-d917bbd2-f44a-48ce-b3bd-8433d7693f74.PNG)
+![Register role](https://user-images.githubusercontent.com/93283135/216874931-69401fda-a763-4dcc-ae67-cbcb5116b872.PNG)
+![registerview](https://user-images.githubusercontent.com/93283135/216874953-aafa2a7b-77e5-4626-a6da-8c7477aa3302.PNG)
+
+
 
 
 ### Register Page:
@@ -58,7 +62,6 @@ The view used here is displayed above. This confirms authorisation and adds the 
 
 This view is called on within the urls.py file and is tested on in the test.py file. 
 
-![home page](https://user-images.githubusercontent.com/93283135/192447633-f21076f7-2951-464b-96e4-5c333a9efd7b.PNG)
 ![task list](https://user-images.githubusercontent.com/93283135/192447656-8253d6d1-f0a1-434c-943f-5071d2153a83.PNG)
 
 
@@ -68,9 +71,9 @@ The home page shows all available features to the user in a comprehensive list.
 
 Here the user can logout using the link in the top right corner of the app. This link will redirect the user back to the login page. 
 
-The header at the top of the page is styled to welcome the user by their username and tell them how many incomplete tasks they remaining in their todo list.
+The header at the top of the page is styled to welcome the user by their role in the production and tell them how many incomplete tasks they remaining in their todo list.
 
-The search bar is below this and uses the django search feature to search the users the todo list. The view interprets strings typing into the search and searches for tasks contains these strings within their name.
+The search bar is below this and uses the django search feature to search the users todo list. The view interprets strings typing into the search and searches for tasks contains these strings within their name.
 
 To the right of the search bar is a plus button which when pressed will redirect the user to an empty form where the user can create a new task.
 
@@ -80,15 +83,13 @@ If the user clicks on the task from the shown list it will redirect them to the 
 
 The X button features on the task will redirect the user to a delete confirmation page. 
 
-The three dots on the far right can be held and dragged to drag the tasks to rearrange the order of the list. 
-
 Above is the view for the functioning of this page.
 
 This view is called on within the urls.py file and is tested on in the test.py file. 
 
 
-![create task](https://user-images.githubusercontent.com/93283135/192454054-921d4d9a-10ee-4966-ac9a-4ee524968424.PNG)
-![create tasks](https://user-images.githubusercontent.com/93283135/192454110-8c193a54-4e95-48bb-a111-d86142cab263.PNG)
+
+
 
 
 ### The Task Creation Form:
@@ -103,11 +104,10 @@ The user can return to the home page by clicking the back link at the top left o
 
 Above is the view for the functioning of this page.
 
-This view is called on within the urls.py file and is tested on in the test.py file. 
+![task descriptioin](https://user-images.githubusercontent.com/93283135/216875971-aae5ebcc-423e-4e36-a16a-9c48ce2813a5.PNG)
+![delete screen](https://user-images.githubusercontent.com/93283135/216875979-a05bd43a-bb4b-4708-b090-392b03fd555d.PNG)
+![task updates and delete](https://user-images.githubusercontent.com/93283135/216875990-9fbc3c0b-8830-4f2d-a738-a595267cd6e6.PNG)
 
-![update](https://user-images.githubusercontent.com/93283135/192455937-e84c61f4-666a-4a06-ae0a-823c990505b7.PNG)
-![update and delete](https://user-images.githubusercontent.com/93283135/192455887-9599e91d-e743-4622-a20c-162bac7c7ccc.PNG)
-![delete](https://user-images.githubusercontent.com/93283135/192455952-1df19229-44a7-4a14-b6d9-ffc87c65f0da.PNG)
 
 
 ### Delete and Update Task: 
@@ -126,8 +126,7 @@ Above is the views for the functioning of these pages.
 
 ## Testing
 
-
-![testing](https://user-images.githubusercontent.com/93283135/192486724-42b0fb0b-b4de-4b20-84bc-96279331ddf6.PNG)
+![testing the views](https://user-images.githubusercontent.com/93283135/216876166-13caa104-96bd-41e8-8d58-8f106e8e4265.PNG)
 
 
 I used the included django testing functions to test my views.
@@ -163,12 +162,12 @@ I used the following steps to deploy my page:
 2. I installed gunicorn and dj-database-url.
 3. I logged into my installed heroku within the repo terminal.
 4. I created a new heroku app linking the repo to my heroku account.
-5. I created a new postgresql database on heroku and linked it to my repo for use instead of sqlite.
+5. I created a new ElephantSQL Database and linked it to my repo for use instead of sqlite.
 6. I pushed all these changes to github and made my first deployment to heroku
-7. Created the Environment Variables within setting.py, gitpod workspaces and heroku.
+7. Created the Environment Variables within setting.py and env.py, gitpod workspaces and heroku.
 8. Hid the SECRET_KEY
 
-The livelink can be found here https://tylertodo.herokuapp.com/
+The livelink can be found here https://filmcrewtodo.herokuapp.com/
 
 ## Credits
 
@@ -177,8 +176,6 @@ The prior two walkthroughs in this module of the course.
 I used the following sites as sources and tutorials for django components.
 
 https://stackoverflow.com/
-
-https://getbootstrap.com/
 
 https://ccbv.co.uk/projects/Django/4.0/
 
